@@ -77,7 +77,7 @@ const UpdateProfile: React.FC<Props> = ({navigation}) => {
     return (
         <View style={styles.container}>
             <Header progress={0.2}  />
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <Text style={styles.NameTextHeading}>Enter Student's Name</Text>
                 <TextInput
                     placeholder='for eg. Rahul Prathmesh'
@@ -99,6 +99,7 @@ const UpdateProfile: React.FC<Props> = ({navigation}) => {
                     renderItem={renderClassItem}
                     keyExtractor={(item) => item.id.toString()}
                     numColumns={3}
+                    showsVerticalScrollIndicator= {false}
                 />
                 {showBoardSelection &&
                     <View style={styles.boardSelectBox}>
@@ -157,7 +158,7 @@ const styles = StyleSheet.create({
         borderColor: '#e2e2e2',
         borderRadius: 5,
         marginBottom: 15,
-        marginRight: 17
+        marginRight: 15
     },
     classText: {
         fontSize: 16,

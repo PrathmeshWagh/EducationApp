@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View,ScrollView } from 'react-native'
 import React, { useState } from 'react'
 import Header from '../Component/Header'
 import { NavigationProp, ParamListBase } from '@react-navigation/native';
@@ -16,7 +16,7 @@ const SchoolMediumScreen: React.FC<Props> = () => {
   return (
     <View style={styles.container}>
        <Header progress={0.8}  />
-      <View style={{flex:1, justifyContent:'space-between'}}>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View>
 
           <View>
@@ -35,7 +35,7 @@ const SchoolMediumScreen: React.FC<Props> = () => {
               <Text style={styles.yearText}>Hindi Medium</Text>
             </View>
           </RadioButton.Group>
-
+        <View style={{marginBottom:10}}>
           <Searchbar
             placeholder="Find Other Medium"
             onChangeText={setSearchQuery}
@@ -44,12 +44,12 @@ const SchoolMediumScreen: React.FC<Props> = () => {
               borderRadius: 0, backgroundColor: '#ffff', borderWidth: 0.3, marginTop: 20, height: 50,
             }}
           />
+          </View>
         </View>
-
-        <View style={{marginBottom:20}}>
+      </ScrollView>
+       <View style={{marginBottom:20}}>
           <Button title='Continue' onPress={() => console.log('ssss')} />
-        </View>
-      </View>
+       </View>
     </View>
   )
 }

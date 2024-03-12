@@ -1,4 +1,4 @@
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View,ScrollView } from 'react-native'
 import React from 'react'
 import Header from '../Component/Header'
 import { NavigationProp, ParamListBase } from '@react-navigation/native';
@@ -17,8 +17,8 @@ const SelectGoalScreen: React.FC<Props> = ({ navigation }) => {
     return (
         <View style={styles.container}>
              <Header progress={0.6}  />
-            <View style={{ flex: 1, justifyContent: 'space-between', marginTop:10 }}>
-                <View>
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ marginTop:10}}>
+
                     <View style={styles.firstBox}>
                         <Text style={styles.headlineText}>To help you with course material to achieve your goal</Text>
                     </View>
@@ -41,13 +41,12 @@ const SelectGoalScreen: React.FC<Props> = ({ navigation }) => {
                             <RadioButton value="third" />
                             <Text style={styles.yearText}>NEET/JEE/Foundation</Text>
                         </View>
-
-                        <View style={styles.radioIconWithText}>
-                            <RadioButton value="Fourth" />
-                            <Text style={styles.yearText}>Olympods/NTSE</Text>
-                        </View>
+                         <View style={styles.radioIconWithText}>
+                                                    <RadioButton value="Fourth" />
+                                                    <Text style={styles.yearText}>Olympods/NTSE</Text>
+                                                </View>
                     </RadioButton.Group>
-
+                    <View style={{marginBottom:10}}>
                     <Searchbar
                         placeholder="Find Other Goals"
                         onChangeText={setSearchQuery}
@@ -56,11 +55,10 @@ const SelectGoalScreen: React.FC<Props> = ({ navigation }) => {
                             borderRadius: 0, backgroundColor: '#ffff', borderWidth: 0.3, marginTop: 20, height: 50,
                         }}
                     />
-                </View>
-
-                <View style={{ marginBottom: 20 }}>
-                    <Button title='Continue' onPress={() => navigation.navigate('SchoolMediumScreen')} />
-                </View>
+                    </View>
+            </ScrollView>
+            <View style={{ marginVertical: 20 }}>
+                  <Button title='Continue' onPress={() => navigation.navigate('SchoolMediumScreen')} />
             </View>
         </View>
     )
