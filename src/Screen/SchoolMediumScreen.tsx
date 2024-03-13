@@ -9,7 +9,7 @@ import Button from '../Component/Button';
 interface Props {
   navigation: NavigationProp<ParamListBase>;
 }
-const SchoolMediumScreen: React.FC<Props> = () => {
+const SchoolMediumScreen: React.FC<Props> = ({navigation}) => {
   const [value, setValue] = React.useState('');
   const [searchQuery, setSearchQuery] = React.useState('');
 
@@ -48,7 +48,7 @@ const SchoolMediumScreen: React.FC<Props> = () => {
         </View>
       </ScrollView>
        <View style={{marginBottom:20}}>
-          <Button title='Continue' onPress={() => console.log('ssss')} />
+          <Button title='Continue' onPress={() =>navigation.navigate('CourseDetailScreen')} />
        </View>
     </View>
   )

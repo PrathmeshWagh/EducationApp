@@ -6,6 +6,9 @@ import UpdateProfile from '../Screen/UpdateProfile';
 import ExamAppearSelectionScreen from '../Screen/ExamAppearSelectionScreen';
 import SelectGoalScreen from '../Screen/SelectGoalScreen';
 import SchoolMediumScreen from '../Screen/SchoolMediumScreen';
+import CourseDetailScreen from '../Screen/OrderDetail/CourseDetailScreen';
+import CurriculumScreen from '../Screen/OrderDetail/CurriculumScreen';
+import CourseBuyScreen from '../Screen/OrderDetail/CourseBuyScreen';
 
 const MainNavigator = () => {
     const Stack = createNativeStackNavigator()
@@ -19,6 +22,9 @@ const MainNavigator = () => {
                 <Stack.Screen name='ExamAppearSelectionScreen' component={ExamAppearSelectionScreen}/>
                 <Stack.Screen name='SelectGoalScreen' component={SelectGoalScreen} />
                 <Stack.Screen name='SchoolMediumScreen'  component={SchoolMediumScreen}/>
+                <Stack.Screen name='CourseDetailScreen' component={CourseDetailScreen}/>
+                <Stack.Screen name='CurriculumScreen'  component={CurriculumScreen}/>
+                <Stack.Screen name='CourseBuyScreen' component={CourseBuyScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     )

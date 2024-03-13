@@ -12,7 +12,7 @@ interface HeaderProps {
 }
 const Header: React.FC<HeaderProps> = ({ progress }) => {
 const {width,height} = Dimensions.get('window')
-console.log(width,height)
+
   const navigation = useNavigation()
   return (
     <View style={styles.container}>
