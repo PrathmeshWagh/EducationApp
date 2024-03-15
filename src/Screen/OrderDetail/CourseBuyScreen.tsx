@@ -39,7 +39,7 @@ const CourseBuyScreen:React.FC<Props> = ({navigation}) => {
 
             </ScrollView>
             <View style={{ marginVertical: 20 }}>
-                <ButtonWithIcon title='Proceed' onPress={() => ''} />
+                <ButtonWithIcon title='Proceed' onPress={() => navigation.navigate('CourseListScreen')} />
             </View>
         </View>
     )
