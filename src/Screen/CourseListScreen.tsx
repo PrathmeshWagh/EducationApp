@@ -86,22 +86,28 @@ const Data :Course[] = [
   }
 ]
 
-const renderData = ({ item }:{item:Course}) => {
-  return (
-    <View style={{marginHorizontal:10, marginBottom:20,}}>
-      <CourseListCart source={item.img}
-        category={item.category}
-        title={item.title}
-        price={item.price}
-        rating={item.rating}
-        videos={item.videos}
-        author={item.author}
-      />
-    </View>
-  )
-}
 
-const CourseListScreen: React.FC<Props> = () => {
+
+
+const CourseListScreen: React.FC<Props> = ({navigation}) => {
+
+  const renderData = ({ item }:{item:Course}) => {
+    return (
+      <View style={{marginHorizontal:10, marginBottom:20,}}>
+        <CourseListCart source={item.img}
+          category={item.category}
+          title={item.title}
+          price={item.price}
+          rating={item.rating}
+          videos={item.videos}
+          author={item.author}
+          onPress={() => console.log('ff')}
+        />
+      </View>
+    )
+  }
+
+
   return (
     <View style={styles.container}>
       <FlatList

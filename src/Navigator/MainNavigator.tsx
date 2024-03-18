@@ -10,14 +10,16 @@ import CourseDetailScreen from '../Screen/OrderDetail/CourseDetailScreen';
 import CurriculumScreen from '../Screen/OrderDetail/CurriculumScreen';
 import CourseBuyScreen from '../Screen/OrderDetail/CourseBuyScreen';
 import CourseListScreen from '../Screen/CourseListScreen';
+import DailyCheckIn from '../Screen/DailyCheckIn';
 
 const MainNavigator = () => {
     const Stack = createNativeStackNavigator()
 
     return (
         <NavigationContainer>
-            <Stack.Navigator screenOptions={{
+            <Stack.Navigator initialRouteName='DailyCheckIn' screenOptions={{
                 headerShown: false
+                
             }}>
                 <Stack.Screen name='UpdateProfileScreen' component={UpdateProfile} />
                 <Stack.Screen name='ExamAppearSelectionScreen' component={ExamAppearSelectionScreen}/>
@@ -27,6 +29,7 @@ const MainNavigator = () => {
                 <Stack.Screen name='CurriculumScreen'  component={CurriculumScreen}/>
                 <Stack.Screen name='CourseBuyScreen' component={CourseBuyScreen} />
                 <Stack.Screen name='CourseListScreen' component={CourseListScreen} />
+                <Stack.Screen name='DailyCheckIn' component={DailyCheckIn} />
             </Stack.Navigator>
         </NavigationContainer>
     )

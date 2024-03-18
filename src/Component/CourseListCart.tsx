@@ -13,9 +13,9 @@ interface CourseListCartProps {
     author: string;
 }
 
-const CourseListCart:React.FC<CourseListCartProps> = ({ source, category, title, price, rating, videos, author }) => {
+const CourseListCart:React.FC<CourseListCartProps> = ({ source, category, title, price, rating, videos, author,onPress }) => {
     return (
-        <View style={styles.container}>
+        <Pressable style={styles.container} onPress={onPress}>
             <View>
                 <Image source={source} resizeMode='cover' style={styles.imageBox} />
             </View>
@@ -43,7 +43,7 @@ const CourseListCart:React.FC<CourseListCartProps> = ({ source, category, title,
                 <Text style={[styles.categorytitle,{fontWeight:'400', paddingVertical:5}]}>By {author}</Text>
 
             </View>
-        </View>
+        </Pressable>
     )
 }
 
